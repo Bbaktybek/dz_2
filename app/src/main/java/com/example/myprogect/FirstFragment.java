@@ -21,6 +21,9 @@ public class FirstFragment extends Fragment {
     private Button btnRecet;
     private Integer counter;
 
+    private Button btnGo;
+
+
     private final View.OnClickListener onClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
@@ -69,6 +72,17 @@ public class FirstFragment extends Fragment {
         btnMinus.setOnClickListener(onClickListener);
         btnPlus.setOnClickListener(onClickListener);
         btnRecet.setOnClickListener(onClickListener);
+        btnGo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Bundle bundle = new Bundle();
+                bundle.putString("key", textView.getText().toString());
+                SecondFragment secondFragment = new SecondFragment();
+                secondFragment.setArguments(bundle);
+                requireActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.container, secondFragment).addToBackStack(null).commit();
+            }
+        });
 
     }
 
@@ -77,5 +91,6 @@ public class FirstFragment extends Fragment {
         btnMinus = requireActivity().findViewById(R.id.btn_minus_one);
         btnPlus = requireActivity().findViewById(R.id.btn_plus_one);
         btnRecet = requireActivity().findViewById(R.id.btn_recet);
+        btnGo = requireActivity().findViewById(R.id.btn_Go);
     }
 }

@@ -46,5 +46,15 @@
 
 </LinearLayout>
 
+    <Button
+        android:id="@+id/btn_Go"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="bottom"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:text="GO"
+        android:textSize="40sp" />
+
 
 </RelativeLayout>
